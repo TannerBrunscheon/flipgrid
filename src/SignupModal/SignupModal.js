@@ -9,13 +9,13 @@ export default function SignupModal() {
     const [submitted, setSubmitted] = useState(false)
 
     const onSubmit = () =>{
-        setSubmitted(true)
+        setSubmitted(true);
     }
 
     return (
         <div>
             {
-                submitted ? <SignupForm {...{firstName,setFirstName, email, setEmail, password, setPassword, onSubmit}}/> : Confirmation
+                submitted ? <Confirmation {...{firstName,email}}/>  : <SignupForm {...{firstName,setFirstName, email, setEmail, password, setPassword, onSubmit}}/>
             }
         </div>
     )
