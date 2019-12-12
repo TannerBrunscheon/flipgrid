@@ -4,7 +4,7 @@ The goal of this challenge is to get a better understanding of your web developm
 interface design abilities. You are tasked with providing a simple sign up form, where a user can
 register for an imaginary service. The form is to include inputs for the user’s first name, email
 address, and password.
-
+A
 Feel free to use any technologies with which you are most comfortable.
 
 **View 1 - Sign Up**
