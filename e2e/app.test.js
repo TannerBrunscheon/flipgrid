@@ -5,33 +5,36 @@ describe('E2E', () => {
     await page.goto('http://localhost:3000')
   })
 
-  it('should display a react logo', async () => {
-    await expect(page).toMatch('React')
+  it('should inititally load a form', async () => {
+    await expect(page).toMatchElement('form')
   })
 
-  it('should match a button with a "Get Started" text inside', async () => {
-    await expect(page).toMatchElement('.App-button', { text: 'Get Started' })
-  })
-
-  it('should match a input with a "textInput" name then fill it with text', async () => {
-    await expect(page).toFill('input[name="textInput"]', 'James')
-  })
-
-  it('should match a form with a "myForm" name then fill its controls', async () => {
+  it('should fillout form and click submit', async ()=>{
     await expect(page).toFillForm('form[name="SignupForm"]', {
-      testOne: 'James',
-      testTwo: 'Bond',
+      nameInput: 'Test',
+      emailInput: 'Test@Best.com',
+      passwordInput: 'PassTest',
     })
+    await expect(page).toClick("#SubmitButton")
+    await expect(page).toMatch("You have been registered for this awesome service")
   })
 
-  it('should match a select with a "testSelect" name then select the specified option', async () => {
-    await expect(page).toSelect('select[name="testSelect"]', 'Second Value')
+  it("should not allow submittion if form is not completly filled", async ()=>{
+    await expect(page).toFillForm('form[name="SignupForm"]', {
+      nameInput: 'Test',
+      passwordInput: 'PassTest',
+    })
+    await expect(page).toClick("#SubmitButton")
+    await expect(page).toMatchElement('form')
   })
 
-  it('should match a File Input with a "App-inputFile" class then fill it with a local file', async () => {
-    await expect(page).toUploadFile(
-      '.App-inputFile',
-      path.join(__dirname, 'jest.config.js'),
-    )
+  it("should not allow submittion if email is not an email", async ()=>{
+    await expect(page).toFillForm('form[name="SignupForm"]', {
+      nameInput: 'Test',
+      emailInput: 'NotAnEmail',
+      passwordInput: 'PassTest',
+    })
+    await expect(page).toClick("#SubmitButton")
+    await expect(page).toMatchElement('form')
   })
 })

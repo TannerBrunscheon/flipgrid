@@ -9,12 +9,12 @@ export default function SignupForm({firstName, setFirstName, email, setEmail, pa
             </header>
             <p>Use the form below to sign up for this super awesome service. You're only a few steps away!</p>
             <label htmlFor="NameInput">First Name</label> <br/>
-            <input type="text" className="inputField" id="NameInput" value={firstName} required onChange={(e)=> setFirstName(e.target.value)}/> <br/>
+            <input type="text" className="inputField" id="NameInput"  name="nameInput"value={firstName} required onChange={(e)=> setFirstName(e.target.value)}/> <br/>
             <label htmlFor="EmailInput">Email Address</label> <br/>
-            <input type="email" className="inputField" id="EmailInput" value={email} required onChange={(e)=> setEmail(e.target.value)}/> <br/>
+            <input type="email" className="inputField" id="EmailInput" name="emailInput" value={email} required onChange={(e)=> setEmail(e.target.value)}/> <br/>
             <label htmlFor="PasswordInput">Password</label> <br/>
-            <input type="password" className="inputField" id="PasswordInput" value={password} required onChange={(e)=> setPassword(e.target.value)}/> <br/>
-            <button type="submit">Sign Up</button>
+            <input type="password" className="inputField" id="PasswordInput" name="passwordInput" value={password} required onChange={(e)=> setPassword(e.target.value)}/> <br/>
+            <button type="submit" id="SubmitButton">Sign Up</button>
         </form>
     )
 }
