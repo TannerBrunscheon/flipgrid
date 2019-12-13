@@ -1,7 +1,6 @@
-/* eslint-disable no-undef */
 const path = require('path')
 
-describe('app', () => {
+describe('E2E', () => {
   beforeEach(async () => {
     await page.goto('http://localhost:3000')
   })
@@ -19,7 +18,7 @@ describe('app', () => {
   })
 
   it('should match a form with a "myForm" name then fill its controls', async () => {
-    await expect(page).toFillForm('form[name="testForm"]', {
+    await expect(page).toFillForm('form[name="SignupForm"]', {
       testOne: 'James',
       testTwo: 'Bond',
     })
