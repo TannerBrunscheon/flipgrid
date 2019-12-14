@@ -16,7 +16,7 @@ describe('E2E', () => {
       passwordInput: 'PassTest',
     })
     await expect(page).toClick("#SubmitButton")
-    await expect(page).toMatch("You have been registered for this awesome service")
+    await expect(page).toMatch("Test@Best.com")
   })
 
   it("should not allow submittion if form is not completly filled", async ()=>{
