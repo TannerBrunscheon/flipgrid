@@ -1,13 +1,13 @@
-import React from 'react';
-import './App.css';
-import SignupModal from './SignupModal/SignupModal';
+import React from "react";
+import "./App.css";
+import SignupModal from "./SignupModal/SignupModal";
 
-const App = ()=> {
+const App = () => {
   return (
     <div className="App">
-      <SignupModal/>
+      <SignupModal />
     </div>
   );
-}
+};
 
 export default App;
