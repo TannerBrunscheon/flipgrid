@@ -37,7 +37,8 @@ export default function SignupForm({
         value={firstName}
         required
         onChange={e => setFirstName(e.target.value)}
-      />{" "}
+        autoComplete="name"
+      />
       <br />
       <label htmlFor="EmailInput">Email Address</label> <br />
       <input
@@ -48,7 +49,8 @@ export default function SignupForm({
         value={email}
         required
         onChange={e => setEmail(e.target.value)}
-      />{" "}
+        autoComplete="email"
+      />
       <br />
       <label htmlFor="PasswordInput">Password</label> <br />
       <input
@@ -59,7 +61,8 @@ export default function SignupForm({
         value={password}
         required
         onChange={e => setPassword(e.target.value)}
-      />{" "}
+        autoComplete="current-password"
+      />
       <br />
       <button type="submit" id="SubmitButton">
         Sign Up
