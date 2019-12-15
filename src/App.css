@@ -19,7 +19,11 @@ button {
   font-weight: bold;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 h1 {
   font-weight: normal;
-  margin: 5px 0px;
+  line-height: 1;
 }

@@ -1,5 +1,3 @@
-const path = require("path");
-
 describe("E2E", () => {
   beforeEach(async () => {
     await page.goto("http://localhost:3000");
@@ -22,7 +20,7 @@ describe("E2E", () => {
     await expect(page).toMatch("Test@Best.com");
   });
 
-  it("should not allow submittion if form is not completly filled", async () => {
+  it("should not allow submission if form is not completly filled", async () => {
     await expect(page).toFillForm('form[name="SignupForm"]', {
       nameInput: "Test",
       passwordInput: "PassTest"
@@ -31,7 +29,7 @@ describe("E2E", () => {
     await expect(page).toMatchElement("form");
   });
 
-  it("should not allow submittion if email is not an email", async () => {
+  it("should not allow submission if email is not an email", async () => {
     await expect(page).toFillForm('form[name="SignupForm"]', {
       nameInput: "Test",
       emailInput: "NotAnEmail",
